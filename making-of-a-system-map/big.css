@@ -1,0 +1,142 @@
+body {
+  font-family:'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+body.background-repeat {
+  background-size: auto;
+  background-repeat: repeat;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:yellow;
+}
+
+/* other choices for emphasis colors:
+#8dbd0c; #39ff14; */
+
+a {
+  background:#34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:75px;
+  line-height:97%;
+}
+
+div.center {
+  text-align:center;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+
+div.imageCenter {
+  position:fixed;
+  left:50%;
+}
+
+notes {
+    display:none;
+}
+/* normally not good, but ok in context of full screen directional navigation */
+:focus {
+    outline: 0;
+}
+
+.strkthru {
+  color:red;
+  text-decoration:line-through;
+}
+
+.innerstrk {
+  color:white;
+}
+
+.nobreak {
+  white-space:pre;
+}
+
+span img {
+  display:inline-block;
+  margin:10px 10px 0 0;
+  padding:5px 10px;
+  height:100%;
+  width:auto;
+}
+
+.blink_text {
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  -moz-animation-name: blinker;
+  -moz-animation-duration:8s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+
+  animation-name: blinker;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+  0% { opacity: 1.0; }
+  1.25% { opacity: 0.0; }
+  2.5% { opacity: 1.0; }
+  70% { opacity: 1.0; }
+  71.25% { opacity: 0.0; }
+  72.5% { opacity: 1.0; }
+  75% { opacity: 1.0; }
+  76.25% { opacity: 0.0; }
+  77.5% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+  0% { opacity: 1.0; }
+  1.25% { opacity: 0.0; }
+  2.5% { opacity: 1.0; }
+  70% { opacity: 1.0; }
+  71.25% { opacity: 0.0; }
+  72.5% { opacity: 1.0; }
+  75% { opacity: 1.0; }
+  76.25% { opacity: 0.0; }
+  77.5% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+  0% { opacity: 1.0; }
+  1.25% { opacity: 0.0; }
+  2.5% { opacity: 1.0; }
+  70% { opacity: 1.0; }
+  71.25% { opacity: 0.0; }
+  72.5% { opacity: 1.0; }
+  75% { opacity: 1.0; }
+  76.25% { opacity: 0.0; }
+  77.5% { opacity: 1.0; }
+}

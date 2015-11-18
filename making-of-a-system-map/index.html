@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang='en'>
+  
+<head>
+  <title>making of a (transit) system map</title>
+  <meta charset='utf-8'>
+  <meta property="og:title" content="system map design"/>
+  <meta property="og:description" 
+    content="approaches, techiques to bus/rail system map creation"/>
+  <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <script src='big.js'></script>
+</head>
+
+<body>
+ 
+<!-- intro -->
+<div>making-of-a-<em>(transit)</em>-system-map.</div>
+<div>old map <em>--></em>.</div>
+<div><img src="./img/system_map_2014.png"></div>
+<div>what is the <em>purpose</em> of this map?</div>
+<div>provide an <em>overview</em> of TriMet transit service.</div>
+<div>clearly illustrate <em>where</em> routes go and how they <em>interact</em> with each other.</div>
+<div>
+  indicate the <em>mode</em>, <em>frequency</em> &amp; <em>span</em> of those routes.
+  <notes>
+    the map provides and overview of this transit serves the region and how the various routes work in conjunction with one another.
+  </notes>
+</div>
+<div>understand its inherent <em>limitations</em>.</div>
+<div>it's a <em>static</em>, <em>small scale</em>, <em>14"</em> x <em>21"</em> map.</div>
+<div class="strkthru">
+  <span class="innerstrk">
+    <em>detailed</em> trip planning.
+  </span>
+  <notes>The scale of the map effectively prohibits this</notes>
+</div>
+<div> there are better tools for that, like <em>this</em> -->.</div>
+<div><img src="./img/trip_planner.png"></div>
+
+
+<!-- inspiration -->
+<div><em>inspiration</em> -->.</div>
+<div><img src="./img/muni_sf_system_map.png">
+  <notes>
+    extremely clean lines help bring order to a complex system
+    
+    Attribution:
+    SFMTA Muni System Map 2015 (San Francisco):
+    https://www.sfmta.com/maps/muni-system-map
+  </notes>
+</div>
+<div><img src="./img/wmata_dc_system_map.png">
+  <notes>
+    This map deviates from true geography significantly, but still serves its purpose very well
+   
+    Attribution:
+    WMATA Metrobus System Map (Washington, DC)
+    http://www.wmata.com/bus/maps/
+  </notes>
+</div>
+<div><img src="./img/la_metro_system_map.png">
+  <notes>
+  complex network does a good job of showing service levels
+
+  Attribution:
+  LA Metro System Map
+  https://www.metro.net/riding/maps/
+  </notes>
+</div>
+<div >
+  resource:
+  <br />
+  <a href="http://www.humantransit.org/maps/">
+    <small class="nobreak">human transit (blog).</small>
+  </a>
+  <br />
+  <img src="./img/human_transit.png">
+  <notes>
+    Jarret Walker of Human Transit has extensively studied what makes an effective transit map and I drew heavily on the principals that he has extracted
+  </notes>
+</div>
+
+
+<!-- approaches to cartographic technique implementation -->
+<div><em>approaches</em> <small>(to implementing cartographic techniques)</small> -->.</div>
+<div>
+  plan a: <em>automation</em>.
+  <notes>
+    I am both a cartographer and a coder and being able to write scripts that automate cartographer techniques has made my life a lot easier
+  </notes>
+</div>
+<div style="background:white;">
+  <a href="https://github.com/grant-humphries/system-map-git">
+    <img src="./img/system_map_github_page.png">
+  </a> 
+</div>
+<div>
+  plan b: painstaking, <em>manual</em> editing <span class="blink_text" >:</span>| .
+  <notes>
+    Plan A is better than Plan B, unfortunately there was still a fair amount of B
+  </notes>
+</div>
+
+<!-- obstacles to sound transit map design -->
+<div><em>cartographic</em> obstacles -->.</div>
+
+<div>
+  1. <em>scale</em> <br />
+  (1:<em>100</em>,<em>000</em>).
+  <notes>
+    -understand limitations of this small scale
+    -scale ties into all of the forthcoming challenges
+  </notes>
+</div>.
+
+<div class='nobreak'>2. <em>generalization</em>.</div>
+<div>simplification <em>vs.</em> smoothing. </div>
+<div data-bodyclass='background-repeat'><img src="./img/simplification_methods.png" style="width:20px;"></div>
+<div data-bodyclass='background-repeat'><img src="./img/smoothing_methods.png"></div>
+<div>
+  geographic accuracy <br /> <em>vs.</em> <br /> utility.
+  <notes>
+    the latter end of this spectrum this becomes more of a design project, with GIS on the fringes
+  </notes>
+</div>
+<div> <img src="./img/removal_14.png" ></div>
+<div> <img src="./img/removal_15.png" style="width:auto;height:5%;"></div>
+<div><em>embellishment</em> -->.</div>
+<div> <img src="./img/embellishment_14.png"></div>
+<div> <img src="./img/embellishment_15.png"></div>
+
+<div>3. <em>unifying</em> divided streets.</div>
+<div> 
+  <em>dual</em> carriageway.
+  <img src="./img/dual_carriageway_map.png">
+  <img src="./img/dual_carriageway_aerial.png">
+</div>
+<div><em>couplet</em> -->.</div>
+<div> <img src="./img/couplet_map.png"></div>
+<div>
+  <small>problem:</small> 
+  <em>multiple</em> geometries respresent a <em>single</em> corridor
+</div>
+<div><em>automation</em> options -->.</div>
+</div>
+<div style="background:white;"> 
+  <img src="./img/merge_divided_roads_arcgis.png">
+</div>
+<div style="background:white;">
+  <img src="./img/skeletron.png">
+</div>
+<div> <img src="./img/couplets_14.png"> </div>
+<div> 
+  <img src="./img/couplets_15.png"> 
+  <notes>
+    notice the labeling technique of placing the street names above and below the geometry that represents the couple to indicate that there are two streets
+  </notes>
+</div>
+
+<div><span class="nobreak">4. <em>overlapping</em></span> routes.</div>
+<div><small>solution:</small> <br /> <em>offsets</em>.</div>
+<div><img src="./img/offsets_example.png"></div>
+<div>
+  <em>no viable</em> automation options 
+  <small class="nobreak">(to my knowledge)</small>
+</div>
+<div><em>tracing</em> with an offset in a gis -->.</div>
+<div><img src="./img/offset_tool_arcgis.png"></div>
+<div><em>calculating</em> offset distance -->.</div>
+<div>its easier to <em>think</em> about offsets in points.</div>
+<div>a point is a <em>unit</em> of <em>measurement</em> in graphic design</div>
+<div>
+  <em>1</em> point = <br /> 
+  <em><sup>1</sup>/<sub>72</sub></em> of an inch.
+</div>
+<div>using the map scale, points can be <em>converted</em> to map units.</div>
+
+<div> <img src="./img/offsets_14.png"></div>
+<div> <img src="./img/offsets_15.png"></div>
+<div>adapting when space <em>runs out</em> -->.</div>
+<div> <img src="./img/single_geom_14.png"></div>
+<div> <img src="./img/single_geom_15.png"></div>
+
+<div>5. effective use of line <em>color</em> and <em>weight</em>.</div>
+<div><img src="./img/system_map_2014.png"></div>
+<div><img src="./img/gis_system_map.png" /></div>
+
+<!-- closing -->
+<div>
+  <em>questions</em>?
+  <br /> <br />
+  <em>contact</em>: <br />
+  grant.humphries@gmail.com 
+  <br /> <br />
+  <em>github/slides</em>: <br />
+  https://github.com/grant-humphries/presentations/making-of-a-system-map
+</div>
+
+
+</body>
+</html>
