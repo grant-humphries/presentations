@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang='en'>
+  
+<head>
+  <title>making of a (transit) system map</title>
+  <meta charset='utf-8'>
+  <meta property="og:title" content="intro to openstreetmap"/>
+  <meta property="og:description" 
+    content="guide to get you prepared to make contributions to osm"/>
+  <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <script src='big.js'></script>
+</head>
+
+<body>
+
+<!-- what is osm? -->
+<div><img src="./img/osm_logo.png">
+  <em2>introduction</em2>-to-<em2>openstreetmap</em2>.</div>
+<div>
+  <em1>OpenStreetMap</em1> (<em>not</em> "Open Street Maps").
+</div>
+<div><img src="./img/wikipedia_logo.png">
+  <em>wikipedia</em> <em1>of maps</em1>.
+</div>
+<div>anyone can <em>contribute</em>.</div>
+<div>anyone can <em>use</em> <em1>the data</em1>.</div>
+<div><em1>data</em1> <em>model</em> -->.</div>
+<div style="background:white; color:black;">
+  <small class="nobreak"><em1>nodes</em1>, <em>ways</em> &amp; relations</small>
+  <img src="./img/osm_data_model.png">
+</div>
+<div>all <em1>data types</em1> are stored <em>together</em> within native osm format.</div>
+<div><em1>attributes</em1> are called <em>tags</em> -->.</div>
+<div>
+  tags are
+  <nobreak class="nobreak"><em>key</em>:<em1>value</em1></nobreak>
+  pairs.
+</div>
+<div><img src="" alt="">
+  <notes>diagram comparing attribute table for desktop gis to tags in osm editors</notes>
+</div>
+<div>
+  <em>tagging</em> help
+  <small class="nobreak">(and help for all things osm)</small> @ the
+  <a href="http://wiki.osm.org" target="_blank">osm wiki</a>.
+</div>
+<div>osm can be <em>rendered</em> <em1>infinitely</em1> many ways -->.</div>
+<div><img src="./img/osm_default_style_pdx.png"></div>
+<div><img src="./img/osm_transport_map_pdx.png"></div>
+<div><img src="./img/osm_mapquest_pdx.png"></div>
+<div><img src="./img/osm_humanitarian_pdx.png"></div>
+<div><img src="./img/osm_stamen_terrain_pdx.png"></div>
+
+
+<!-- osm@trimet -->
+<div>uses at <em>tri</em><em1>met</em1> -->.</div>
+<div><em>trip planning</em> with
+  <a href="http://www.opentripplanner.org/" target="_blank">OpenTripPlanner</a>.
+</div>
+<div><img src="./img/trimet_trip_planner.png"></div>
+<div><em>map tiles</em> (base map) on
+  <a href="http://ride.trimet.org" target="_blank">interactive system map</a>
+</div>
+<div><img src="./img/osm_trimet_pdx.png"></div>
+<div>
+  <em>transit route</em> creation with
+  <a href="http://www.giro.ca/en/solutions/bus-metro-tram" target="_blank">HASTUS</a>.
+</div>
+<div>comprises geometry <br/> of <em>geo</em>data @
+  <a href="http://developer.trimet.org/gis" target="_blank">developer.trimet.org/gis</a>
+</div>
+<div><img src="./img/trimet_gis_landing_page.png"></div>
+<div>
+  <em1>map data</em1> for navigation system on <em>LIFT buses</em>
+  <nobreak class="nobreak">(paratransit service)</nobreak>.
+</div>
+<div><img src="./img/lift_bus.png"></div>
+
+
+<!-- how to contribute -->
+<div>getting <em>started</em> with <em1>editing</em1> -->.</div>
+<div>
+  create an <em>osm account</em> @
+  <a href="http://www.osm.org" target="_blank">osm.org</a>
+</div>
+<div> <img src="./img/osm_account.png"></div>
+<div><em>editors</em> -->.</div>
+<div><em1>i</em1><em>D</em> -->.</div>
+<div><em1>launch</em1> straight from your <em>browser</em>.</div>
+<div>user <em>friendly</em>.</div>
+<div><em>j</em><em1>osm</em1> -->.</div>
+<div>need <em1>java</em1> installed.</div>
+<div>more <em>powerful</em>.</div>
+<div><em>uploading</em> data -->.</div>
+<div>
+  your edits alter osm only once they've been uploaded</em>.
+  <notes>the editor is your sandbox until you push</notes>
+</div>
+<div>commit <em1>messages</em1> are <em>important</em>.</div>
+<div> <img src="./img/josm_upload_dialog.png"></div>
+
+
+<!-- h2c: data sources -->
+<div>what to <em>use</em> -->.</div>
+<div>sanctioned aerial imagery.</div>
+<div>TIGER overlay.
+  <notes>include image of TIGER Census logo, make joke about how it is crap --haha</notes>
+</div>
+<div>your knowledge.</div>
+
+<div>what not to use -->.</div>
+<div>proprietary map data (like google).</div>
+<div>unsanctioned aerial imagery.</div>
+
+
+<!-- what to contribute -->
+<div>what to map -->.</div>
+<div>poi's.</div>
+<div>building footprints.</div>
+<div>service roads.</div>
+<div>map roulette.</div>
+
+
+<!-- using the data -->
+<div>using the data -->.</div>
+<div>overpass <em>turbo</em>.</div>
+<div><em>q</em><em1>gis</em1> reads geojson</div>
+<div>
+  export to any <em>geo</em>file format
+  that you'd like <em>(</em><em1>ogr2ogr!</em1><em>)</em>
+</div>
+
+
+<!-- closing -->
+<div>
+  <em>questions</em>?
+  <br/> <br/>
+  <em>contact</em>: <br/>
+  grant.humphries@gmail.com 
+  <br/> <br/>
+  <a href="https://github.com/grant-humphries/presentations/intro-to-osm" target="_blank">
+    github/slides
+  </a>:
+  <br/>
+  https://github.com/grant-humphries/presentations/intro-to-osm
+</div>
+
+
+</body>
+</html>
