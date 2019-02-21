@@ -5,8 +5,8 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
   <title>Big</title>
   <link href='big.css' rel='stylesheet' type='text/css' />
-  <link href='custom.css' rel='stylesheet' type='text/css' />
   <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <link href='webapp-3.css' rel='stylesheet' type='text/css' />
   <style>
     .new-shiny { background: #aaaaaa; }
   </style>
@@ -26,20 +26,48 @@
   <div>b. <span class='nobreak'>trimet.buildout-<em>bootstrap</em></span></div>
   <div>ensure versions of build tools are <em>consistent</em></div>
   <div><em>prevent interference</em> from packages installed elsewhere on your system</div>
-  <div><em>no need</em> to install <code>buildout</code> on system Python</div>
+  <div><em>no need</em> to install <code>buildout</code> outside a virtual environment</div>
   <div>c. <em>Upgraded</em> build tools</em></div>
   <div><code>setuptools</code> now supports <em>wheel files</em></div>
   <div>packages like <code>cx-oracle</code>, <code>pycrypto</code>, <code>shapely</code>, etc. can now be installed by <em>buildout</em></div>
   <div>...even on <em>Windows</em></div>
+  <div>d. <em>Locking</em> application dependencies</div>
+  <div>package versions are specified as <em>ranges</em> at the framework level in <code>setup.py</code></div>
+  <div><pre><code class='python'>
+    # these requirements are inherited by various
+    # applications and should have some flexibility
+    install_requires = (
+        'cornice>=3.0,<4',
+        'cx-oracle>=6.0.3',  # wheel support at 6+
+        'pyramid>=1.6.5',
+        'sqlalchemy>=1.2.0',
 
-  <div><pre><code>
-    # code example; TODO: remove
-    const aVar = 2;
-    const aNotherVar = 'a';
-
-    function () {
-      return aVar + aNotherVar
-    }
+        # there's a bug in version 0.3.2+
+        'colanderalchemy==0.3.1',
+    )
   </code></pre></div>
+  <div>packages are <em>pinned</em> at the application level in Buildout's <code>versions</code> section</div>
+  <div><pre><code class='ini'>
+    # write picked versions to a versions file
+    [buildout]
+    extends = versions.cfg
+    update-versions-file = versions.cfg
+
+    # this section lives in `versions.cfg`
+    [versions]
+    alabaster = 0.7.12
+    asn1crypto = 0.24.0
+    babel = 2.6.0
+    bcrypt = 3.1.6
+    chardet = 3.0.4
+  </pre></code></div>
+
+  <div>2. Compatibility <em>additions</em></div>
+  <div><em>Python 3.5+</em> support</div>
+  <div>compatibility with the <em>latest versions</em> of <code>colander</code>, <code>cornice</code>, <code>cx-oracle</code>, <code>pyramid</code> and <code>sqlalchemy</code></div>
+
+  <div>3. Compatibility <em>losses</em></div>
+  <div><em>Python 2.6</em> support dropped</div>
+  <div>Package <em>minimum</em> versions raised</div>
 </body>
 </html>
