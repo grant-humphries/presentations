@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='custom.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='light'>
+  <div class='nobreak'>trimet.webapp <em>3</em></div>
+  <div>Managing environments for <em>build repeatability</em></div>
+  <div>Managing Python versions</div>
+  <div>
+    <img src='img/conda-logo.png' class='conda-logo'>
+    <ul>
+      <li>Switch between major and semi-major Python versions</li>
+      <li>Create environments for testing then remove them</li>
+    </ul>
+  </div>
+  <div>
+    <em class='nobreak'>trimet.buildout-bootstrap</em>
+    <ul>
+      <li>ensure versions of build tools are consistent</li>
+      <li>prevent system installed packages from being available to a project</li>
+    </ul>
+    <notes>no longer any need to install zc.buildout on system or environment Python</notes>
+  </div>
+  <div>An aside</div>
+  <div>
+    <em>Upgraded build tools</em>
+    <ul>
+      <li>setuptools now supports wheels</li>
+      <li>difficult to install packages can now be fetched by buildout</li>
+    </ul>
+  </div>
+</body>
+</html>
