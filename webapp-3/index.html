@@ -16,30 +16,30 @@
 </head>
 <body class='light'>
   <div class='nobreak'>trimet.webapp <em>3</em></div>
-  <div>Managing environments for <em>build repeatability</em></div>
-  <div>Managing Python versions</div>
+  <div>1. Manage environments for <em>build repeatability</em></div>
+  <div>a. Manage <em>Python versions</em> with<br><img src='img/conda-logo.png'></div>
   <div>
-    <img src='img/conda-logo.png' class='conda-logo'>
-    <ul>
-      <li>Switch between major and semi-major Python versions</li>
-      <li>Create environments for testing then remove them</li>
-    </ul>
+    <em>switch</em> between major and semi-major versions
+    <notes>pro-tip: don't add base conda directories to path</notes>
   </div>
-  <div>
-    <em class='nobreak'>trimet.buildout-bootstrap</em>
-    <ul>
-      <li>ensure versions of build tools are consistent</li>
-      <li>prevent system installed packages from being available to a project</li>
-    </ul>
-    <notes>no longer any need to install zc.buildout on system or environment Python</notes>
-  </div>
-  <div>An aside</div>
-  <div>
-    <em>Upgraded build tools</em>
-    <ul>
-      <li>setuptools now supports wheels</li>
-      <li>difficult to install packages can now be fetched by buildout</li>
-    </ul>
-  </div>
+  <div><em>create</em> environments for testing, then <em>remove</em> them</div>
+  <div>b. <span class='nobreak'>trimet.buildout-<em>bootstrap</em></span></div>
+  <div>ensure versions of build tools are <em>consistent</em></div>
+  <div><em>prevent interference</em> from packages installed elsewhere on your system</div>
+  <div><em>no need</em> to install <code>buildout</code> on system Python</div>
+  <div>c. <em>Upgraded</em> build tools</em></div>
+  <div><code>setuptools</code> now supports <em>wheel files</em></div>
+  <div>packages like <code>cx-oracle</code>, <code>pycrypto</code>, <code>shapely</code>, etc. can now be installed by <em>buildout</em></div>
+  <div>...even on <em>Windows</em></div>
+
+  <div><pre><code>
+    # code example; TODO: remove
+    const aVar = 2;
+    const aNotherVar = 'a';
+
+    function () {
+      return aVar + aNotherVar
+    }
+  </code></pre></div>
 </body>
 </html>
