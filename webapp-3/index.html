@@ -23,7 +23,13 @@
     <notes>pro-tip: don't add base conda directories to path</notes>
   </div>
   <div><em>create</em> environments for testing, then <em>remove</em> them</div>
-  <div>b. <span class='nobreak'>trimet.buildout-<em>bootstrap</em></span></div>
+  <div>
+    b. <span class='nobreak'>trimet.buildout-<em>bootstrap</em></span>
+    <notes>
+      install package with:
+      pip install -f https://puppet.trimet.org/deploy/trimet/python/ trimet.buildout-bootstrap
+    </notes>
+  </div>
   <div>ensure versions of build tools are <em>consistent</em></div>
   <div><em>prevent interference</em> from packages installed elsewhere on your system</div>
   <div><em>no need</em> to install <code>buildout</code> outside a virtual environment</div>
@@ -35,7 +41,7 @@
   <div>package versions are specified as <em>ranges</em> at the framework level in <code>setup.py</code></div>
   <div><pre><code class='python'>
     # these requirements are inherited by various
-    # applications and should have some flexibility
+    # applications and should have flexibility
     install_requires = (
         'cornice>=3.0,<4',
         'cx-oracle>=6.0.3',  # wheel support at 6+
@@ -68,6 +74,18 @@
 
   <div>3. Compatibility <em>losses</em></div>
   <div><em>Python 2.6</em> support dropped</div>
-  <div>Package <em>minimum</em> versions raised</div>
+  <div>package <em>minimums raised</em></div>
+
+  <div>4. <em>Adjacent work</em> (time permitting)</div>
+  <div>b. <em class='nobreak'>GitLab CI</em></div>
+  <div>select an <em>image</em></div>
+  <div><em>provision</em> the container</div>
+  <div></div>  <div>a. py<em>test</em></div>
+  <div>create <em>temporary</em> directories and files</div>
+  <div>numerous <em>plugins</em> available</div>
+
+  <div>presentation created with <a href="https://github.com/tmcw/big">Big</a></div>
+  <div>questions?</div>
+  <div><em>hosted slides</em>: <span class='nobreak'>https://bit.ly/2T8fup9</span></div>
 </body>
 </html>
