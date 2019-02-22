@@ -70,13 +70,31 @@
 
   <div>2. Compatibility <em>additions</em></div>
   <div><em>Python 3.5+</em> support</div>
+  <div>the package <code>future</code> helps to provide Python 2/3 support; make use of it in webapp <em>contributions</em></div>
   <div>compatibility with the <em>latest versions</em> of <code>colander</code>, <code>cornice</code>, <code>cx-oracle</code>, <code>pyramid</code> and <code>sqlalchemy</code></div>
 
   <div>3. Compatibility <em>losses</em></div>
   <div><em>Python 2.6</em> support dropped</div>
-  <div>package <em>minimums raised</em></div>
+  <div>package minimums <em>raised</em></div>
+  <div><code>cornice</code> views not based on <code>CorniceAlchemyResource</code> must be <em>adjusted</em> for cornice 2.0+ compatibility</div>
+  <div><pre><code class='python'>
+    from trimet.webapp.util import get_root_acl
 
-  <div>4. <span class='nobreak'><code>GitLab</code> <em>CI</em></span></div>
+    # in `cornice` 2+ the acl is no longer inherited
+    # from the root factory and must be set on the class
+    def __acl__(self):
+        return getattr(
+            trimet.webapp.auth,
+            self.request.get_setting('root_acl'),
+            trimet.webapp.auth.root__acl__
+        )
+  </code></pre></div>
+  <div>
+    A new class <code>BaseCorniceResource</code> provides the basics for creating a <em>modern</em> cornice view
+    <notes>Is unopinionated; has ACL, to_json, response keys and init</notes>
+  </div>
+
+  <div>4. <span class='nobreak'>GitLab <em>CI</em></span></div>
   <div>run <em>jobs</em> (tests, linting, deployment, etc.) in a <code>Docker</code> container upon pushing to <code>GitLab</code></div>
   <div><pre><code class='yaml'>
     # a basic gitlab-ci config; uses yaml syntax
