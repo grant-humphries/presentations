@@ -5,3 +5,7 @@
 .nobreak {
   white-space: pre;
 }
+
+code mark {
+  background: yellow;
+}

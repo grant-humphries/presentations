@@ -66,7 +66,7 @@
     babel = 2.6.0
     bcrypt = 3.1.6
     chardet = 3.0.4
-  </pre></code></div>
+  </code></pre></div>
 
   <div>2. Compatibility <em>additions</em></div>
   <div><em>Python 3.5+</em> support</div>
@@ -76,13 +76,124 @@
   <div><em>Python 2.6</em> support dropped</div>
   <div>package <em>minimums raised</em></div>
 
-  <div>4. <em>Adjacent work</em> (time permitting)</div>
-  <div>b. <em class='nobreak'>GitLab CI</em></div>
-  <div>select an <em>image</em></div>
-  <div><em>provision</em> the container</div>
-  <div></div>  <div>a. py<em>test</em></div>
-  <div>create <em>temporary</em> directories and files</div>
-  <div>numerous <em>plugins</em> available</div>
+  <div>4. <span class='nobreak'><code>GitLab</code> <em>CI</em></span></div>
+  <div>run <em>jobs</em> (tests, linting, deployment, etc.) in a <code>Docker</code> container upon pushing to <code>GitLab</code></div>
+  <div><pre><code class='yaml'>
+    # a basic gitlab-ci config; uses yaml syntax
+
+    stages:
+      - test
+      - release
+
+    run-tests-job:
+      stage: test
+      tags:
+        - python36
+      before_script:
+        - pip --version
+        - pip install -r requirements.txt
+      script:
+        - pytest --script-launch-mode=subprocess
+      only:
+        - tags
+        - master
+  </code></pre></div>
+  <div><em>jobs</em> run in <code>stages</code></div>
+  <div><pre><code class='yaml'>
+    <mark>stages:</mark>
+      <mark>- test</mark>
+      <mark>- release</mark>
+
+    run-tests-job:
+      <mark>stage: test</mark>
+      tags:
+        - python36
+      before_script:
+        - pip --version
+        - pip install -r requirements.txt
+      script:
+        - pytest --script-launch-mode=subprocess
+      only:
+        - tags
+        - master
+  </code></pre></div>
+  <div><em>runners</em> are assigned a <code>Docker</code> image and <code>tags</code></div>
+  <div><code>tags</code> are used to assign <em>runners</em> to <em>jobs</em></div>
+  <div><pre><code class='yaml'>
+    stages:
+      - test
+      - release
+
+    run-tests-job:
+      stage: test
+      <mark>tags:</mark>
+        <mark>- python36</mark>
+      before_script:
+        - pip --version
+        - pip install -r requirements.txt
+      script:
+        - pytest --script-launch-mode=subprocess
+      only:
+        - tags
+        - master
+  </code></pre></div>
+  <div><em>install</em> things in <code>before_script</code></div>
+  <div><pre><code class='yaml'>
+    stages:
+      - test
+      - release
+
+    run-tests-job:
+      stage: test
+      tags:
+        - python36
+      <mark>before_script:</mark>
+        <mark>- pip --version</mark>
+        <mark>- pip install -r requirements.txt</mark>
+      script:
+        - pytest --script-launch-mode=subprocess
+      only:
+        - tags
+        - master
+  </code></pre></div>
+  <div>run <em>core tasks</em> with <code>script</code></div>
+  <div><pre><code class='yaml'>
+    stages:
+      - test
+      - release
+
+    run-tests-job:
+      stage: test
+      tags:
+        - python36
+      before_script:
+        - pip --version
+        - pip install -r requirements.txt
+      <mark>script:</mark>
+        <mark>- pytest --script-launch-mode=subprocess</mark>
+      only:
+        - tags
+        - master
+  </code></pre></div>
+  <div>define <em>branches</em> and <em>tags</em> to run the job against with <code>only</code> and <code>except</code></div>
+  <div><pre><code class='yaml'>
+    stages:
+      - test
+      - release
+
+    run-tests-job:
+      stage: test
+      tags:
+        - python36
+      before_script:
+        - pip --version
+        - pip install -r requirements.txt
+      script:
+        - pytest --script-launch-mode=subprocess
+      <mark>only:</mark>
+        <mark>- tags</mark>
+        <mark>- master</mark>
+  </code></pre></div>
 
   <div>presentation created with <a href="https://github.com/tmcw/big">Big</a></div>
   <div>questions?</div>
